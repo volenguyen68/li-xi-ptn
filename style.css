@@ -196,3 +196,55 @@ body {
     font-weight: inherit;
     font-style: inherit;
   }
+
+  body.mobile {
+
+    .carousel-item {
+      --items: 10;
+      --width: clamp(300px, 90vw, 500px);
+      --height: clamp(400px, 80vw, 600px);
+      --x: calc(var(--active) * 800%);
+      --y: calc(var(--active) * 200%);
+      --rot: calc(var(--active) * 120deg);
+      --opacity: calc(var(--zIndex) / var(--items) * 3 - 2);
+      overflow: hidden;
+      position: absolute;
+      z-index: var(--zIndex);
+      width: var(--width);
+      height: var(--height);
+      margin: calc(var(--height) * -0.5) 0 0 calc(var(--width) * -0.5);
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+      transform-origin: 0% 100%;
+      box-shadow: 0 10px 50px 10px rgba(0, 0, 0, 0.5);
+      background: black;
+      pointer-events: all;
+      transform: translate(var(--x), var(--y)) rotate(var(--rot));
+      transition: transform 0.8s cubic-bezier(0, 0.02, 0, 1);
+    }
+
+    .carousel-item .title {
+      position: absolute;
+      z-index: 1;
+      color: #ffffff;
+      bottom: 20px;
+      left: 20px;
+      transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+      font-size: clamp(42px, 3vw, 30px);
+      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    }
+    .carousel-item .num {
+      position: absolute;
+      z-index: 1;
+      color: #ffffff;
+      top: 10px;
+      left: 20px;
+      transition: opacity 0.8s cubic-bezier(0, 0.02, 0, 1);
+      font-size: clamp(50px, 4vw, 90px);
+    }
+  }

@@ -1,6 +1,19 @@
 /*--------------------
 Vars
 --------------------*/
+function getDeviceType() {
+  let userAgent = navigator.userAgent.toLowerCase();
+
+  if (userAgent.includes("iphone") || userAgent.includes("android")) {
+      return "mobile";
+  } else if (userAgent.includes("ipad") || userAgent.includes("tablet")) {
+      return "tablet";
+  } else {
+      return "desktop";
+  }
+}
+document.body.classList.add(getDeviceType());
+
 let progress = 0; // Hiển thị ảnh đầu tiên
 let startX = 0;
 let active = 0;
@@ -14,7 +27,7 @@ Constants
 --------------------*/
 const speedWheel = 0.02;
 const speedDrag = -0.1;
-const redirectDelay = 3000; // 10 giây (10,000 ms)
+const redirectDelay = 7000; // 10 giây (10,000 ms)
 const redirectURL = "https://lixi.momo.vn/lixi/Dn2LrA0WLQRg40o"; // Link chuyển hướng
 
 /*--------------------
