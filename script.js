@@ -20,15 +20,15 @@ let active = 0;
 let isDown = false;
 let timeoutId = null; // Lưu timeout để tránh chạy nhiều lần
 let countdown = null; // Lưu bộ đếm giây
-let timeLeft = 10; // Số giây đếm ngược mặc định
+let timeLeft = 5; // Số giây đếm ngược mặc định
 
 /*--------------------
 Constants
 --------------------*/
 const speedWheel = 0.02;
 const speedDrag = -0.1;
-const redirectDelay = 7000; // 10 giây (10,000 ms)
-const redirectURL = "https://lixi.momo.vn/lixi/Dn2LrA0WLQRg40o"; // Link chuyển hướng
+const redirectDelay = 5000; // 10 giây (10,000 ms)
+const redirectURL = "https://volenguyen68.github.io/ptn-vatuntang/"; // Link chuyển hướng
 
 /*--------------------
 Get Z-index
